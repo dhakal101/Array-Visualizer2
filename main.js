@@ -7,7 +7,7 @@ cnv.width = 800;
 cnv.height = 600;
 
 // Global Variables
-let myArray = [200, 500, 350, 400, 580, 170, 225, 325, 100, 550, 250, 300, 600, 50, 275];
+let myArray = [400, 200, 200, 400, 200, 200, 200, 400, 200, 200, 200, 200, 400];
 
 
 // Main Program Loop
@@ -31,4 +31,24 @@ function draw() {
 
     // Request another Animation Frame
     requestAnimationFrame(draw);
+}
+
+// Event Listener
+document.addEventListener("keydown", keydownhandler);
+// Event Function
+function keydownhandler(event) {
+    
+    if (event.code == "Digit1") { // When 1 is pressed
+        for ( i = myArray.length - 1; i >= 0; i--) {
+            if (myArray[i] == 400) { 
+                myArray.splice(i, 1);
+            }
+        }
+    } else if (event.code == "Digit2") { // When 2 is pressed
+        for ( i = myArray.length - 1; i >= 0; i--) {
+            if (myArray[i] == 200) { 
+                myArray.splice(i, 1);
+            }
+        }
+    }
 }
